@@ -1,0 +1,217 @@
+/* ============================================================
+   Pospoint Design System — Core Tokens
+   Extracted from the Pospoint Figma file (Retail / Horeca / Pharmacy).
+   ============================================================ */
+
+/* ---- Fonts ------------------------------------------------- */
+/* Primary UI font for the whole product. Loaded from Google Fonts. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans:wght@400;500&display=swap");
+
+:root {
+  /* -----------------------------------------------------------
+     COLOR — Brand
+     The dominant accent across all three verticals.
+     Used for primary buttons (Pharmacy), tab/selection states,
+     section icons, inline actionable text.
+  ----------------------------------------------------------- */
+  --brand-500: rgb(35, 149, 189);   /* primary teal — buttons, selection */
+  --brand-400: rgb(40, 184, 235);   /* lighter — chart accents */
+  --brand-600: rgb(10, 146, 191);   /* hover/pressed */
+  --brand-100: rgba(40, 184, 235, 0.15); /* selection background (sidebar item) */
+
+  /* -----------------------------------------------------------
+     COLOR — Neutrals (foreground + surface)
+     Almost-black for text, with alpha-modulated muted tones.
+  ----------------------------------------------------------- */
+  --fg-1: rgb(33, 34, 35);          /* primary text, headings */
+  --fg-2: rgba(33, 34, 35, 0.64);   /* secondary text, labels */
+  --fg-3: rgba(33, 34, 35, 0.4);    /* disabled / inactive nav */
+  --fg-4: rgba(33, 34, 35, 0.16);   /* hairline border on buttons */
+  --fg-5: rgba(34, 34, 34, 0.12);   /* divider line */
+  --fg-on-brand: rgb(255, 255, 255);
+
+  /* -----------------------------------------------------------
+     COLOR — Surface
+     The app sits on a light cool-gray; cards float white on top.
+  ----------------------------------------------------------- */
+  --bg-app: rgb(242, 245, 247);     /* main page bg */
+  --bg-card: rgb(255, 255, 255);    /* cards, sidebar */
+  --bg-subtle: rgb(240, 243, 245);  /* chip / segment background */
+  --bg-muted: rgb(242, 245, 247);
+  --bg-hover: rgba(33, 34, 35, 0.04);
+
+  /* -----------------------------------------------------------
+     COLOR — Semantic
+     Destructive red, success green, warning amber, info teal.
+  ----------------------------------------------------------- */
+  --danger-500: rgb(250, 90, 90);   /* delete, close shift, expired */
+  --danger-50:  rgb(254, 232, 232);
+
+  --success-500: rgb(77, 191, 115); /* primary CTA (Pay), online dot */
+  --success-400: rgb(123, 199, 143);/* avatars, success badge */
+  --success-50:  rgb(232, 246, 235);
+
+  --warning-500: rgb(255, 204, 0);  /* "Сделано" / pending badge */
+  --warning-400: rgb(255, 166, 65); /* sale price / discount text */
+  --warning-50:  rgb(255, 247, 219);
+
+  --info-500: var(--brand-500);
+
+  /* -----------------------------------------------------------
+     RADII
+  ----------------------------------------------------------- */
+  --radius-sm: 8px;     /* sidebar nav item */
+  --radius-md: 12px;    /* chips, secondary buttons */
+  --radius-lg: 16px;    /* main card / inputs */
+  --radius-xl: 20px;    /* header pills, primary action buttons */
+  --radius-2xl: 24px;
+  --radius-pill: 999px;
+
+  /* -----------------------------------------------------------
+     SHADOWS
+     Quiet, two-level: hairline lift for resting cards,
+     softer second level for floating elements.
+  ----------------------------------------------------------- */
+  --shadow-1: 0px 0.5px 2px 0px rgba(0, 0, 0, 0.1);          /* default card */
+  --shadow-2: 0px 1px 2px 0px rgba(0, 0, 0, 0.04);            /* subtle */
+  --shadow-3: 0px 4px 16px 0px rgba(36, 37, 38, 0.08);        /* dropdown */
+  --shadow-4: 0px 12px 32px 0px rgba(38, 45, 51, 0.12);       /* modal / sheet */
+
+  /* -----------------------------------------------------------
+     SPACING (4px base)
+  ----------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* -----------------------------------------------------------
+     TYPE — Families
+  ----------------------------------------------------------- */
+  --font-sans: "Roboto", "Noto Sans", system-ui, -apple-system, sans-serif;
+
+  /* -----------------------------------------------------------
+     TYPE — Scale
+     Pulled from real Figma usage. Roboto everywhere.
+     Letter-spacing is slightly negative across the system.
+  ----------------------------------------------------------- */
+  --text-display-size: 35px; --text-display-lh: 42px;   /* large totals */
+  --text-h1-size: 30px;      --text-h1-lh: 36px;
+  --text-h2-size: 25px;      --text-h2-lh: 32px;        /* card titles "Продажа" */
+  --text-h3-size: 20px;      --text-h3-lh: 26px;
+  --text-body-size: 18px;    --text-body-lh: 22px;      /* default body */
+  --text-label-size: 16px;   --text-label-lh: 20px;     /* secondary label */
+  --text-caption-size: 14px; --text-caption-lh: 18px;   /* sidebar, chip */
+  --text-micro-size: 12px;   --text-micro-lh: 16px;
+
+  --tracking-tight: -0.010em;
+  --tracking-snug:  -0.005em;
+}
+
+/* ============================================================
+   Semantic typography utility classes
+   ============================================================ */
+.ps-display {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-display-size);
+  line-height: var(--text-display-lh);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+.ps-h1 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-lh);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+.ps-h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-lh);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+.ps-h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-lh);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-1);
+}
+.ps-body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-1);
+}
+.ps-body-regular {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-1);
+}
+.ps-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-lh);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-2);
+}
+.ps-caption {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-lh);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+.ps-micro {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-micro-size);
+  line-height: var(--text-micro-lh);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-2);
+}
+
+/* ============================================================
+   Card + button primitives — used across previews and UI kits
+   ============================================================ */
+.ps-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+}
+.ps-pill {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-1);
+}
+.ps-divider {
+  height: 1px;
+  background: var(--fg-5);
+  border: 0;
+}
+
+/* Hover/press: opacity dim on dark CTAs, tone-shift on tonal */
+.ps-press {
+  transition: transform 80ms ease, background-color 120ms ease,
+              box-shadow 120ms ease, opacity 120ms ease;
+}
+.ps-press:active { transform: scale(0.98); }
